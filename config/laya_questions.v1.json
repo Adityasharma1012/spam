@@ -1,0 +1,33 @@
+{
+  "version": "1.0.0",
+  "description": "Versioned typed question set for Laya System 1 decision model in Email Threat Detection",
+  "questions": {
+    "verdict": {
+      "type": "choice",
+      "instructions": "What is the primary threat classification of the email in `body`?",
+      "criteria": {
+        "phishing": "credential harvesting, account takeover, or spoofing attempt to deceive the recipient into revealing sensitive data or executing malicious payloads",
+        "spam": "unsolicited commercial email, bulk advertising, newsletters, or promotional campaigns without direct attack intent",
+        "suspicious": "anomalous communications with inconclusive intent, unverified sender domains, or unusual urgency",
+        "legitimate": "authentic internal or external business communication, service notification, or personal email"
+      }
+    },
+    "credential_harvesting": {
+      "type": "noul",
+      "instructions": "Does the email in `body` attempt to solicit passwords, payment cards, verification codes, or login credentials?"
+    },
+    "sender_impersonation": {
+      "type": "noul",
+      "instructions": "Does the sender attempt to impersonate a trusted entity, executive, technical support team, or bank?"
+    },
+    "urgency_pressure": {
+      "type": "score",
+      "instructions": "How much psychological urgency, threat of account termination, or coercive pressure is exerted in `body`?",
+      "criteria": [
+        "no artificial urgency or neutral tone",
+        "moderate urgency with a reasonable timeframe",
+        "extreme urgency threatening immediate loss, suspension, or penalty within 24 hours"
+      ]
+    }
+  }
+}

@@ -1,0 +1,139 @@
+{
+  "benchmark_samples": 5,
+  "metrics": {
+    "accuracy": 0.6,
+    "precision": 1.0,
+    "recall": 0.5,
+    "f1": 0.6667,
+    "brier_score": 0.151,
+    "ece": 0.12
+  },
+  "calibration_status": "UNVALIDATED",
+  "evaluated_models": {
+    "laya": {
+      "checkpoint": "convaiinnovations/laya-typed-decisions",
+      "revision": "1a793eb568e6718f15941d08f85432581df534e3"
+    },
+    "ml": {
+      "model": "scikit-learn TF-IDF + MultinomialNB",
+      "status": "DEMO_ONLY"
+    }
+  },
+  "sample_results": [
+    {
+      "sample": "sample_legitimate.eml",
+      "ground_truth": "LEGITIMATE",
+      "consensus_verdict": "NEEDS_REVIEW",
+      "rule": "RULE-09",
+      "confidence": 0.5,
+      "evidence_count": 2,
+      "prompt_injection": false,
+      "agent_reports": {
+        "ml": {
+          "verdict": "LEGITIMATE",
+          "confidence": 0.425
+        },
+        "gemini": {
+          "verdict": "ABSTAIN",
+          "confidence": 0.0
+        },
+        "laya": {
+          "verdict": "SUSPICIOUS",
+          "confidence": 0.7
+        }
+      }
+    },
+    {
+      "sample": "sample_phishing.eml",
+      "ground_truth": "PHISHING",
+      "consensus_verdict": "PHISHING",
+      "rule": "RULE-01",
+      "confidence": 0.95,
+      "evidence_count": 7,
+      "prompt_injection": false,
+      "agent_reports": {
+        "ml": {
+          "verdict": "PHISHING",
+          "confidence": 0.569
+        },
+        "gemini": {
+          "verdict": "ABSTAIN",
+          "confidence": 0.0
+        },
+        "laya": {
+          "verdict": "SUSPICIOUS",
+          "confidence": 0.7
+        }
+      }
+    },
+    {
+      "sample": "sample_prompt_injection.eml",
+      "ground_truth": "PHISHING",
+      "consensus_verdict": "PHISHING",
+      "rule": "RULE-01",
+      "confidence": 0.95,
+      "evidence_count": 4,
+      "prompt_injection": true,
+      "agent_reports": {
+        "ml": {
+          "verdict": "PHISHING",
+          "confidence": 0.403
+        },
+        "gemini": {
+          "verdict": "ABSTAIN",
+          "confidence": 0.0
+        },
+        "laya": {
+          "verdict": "SUSPICIOUS",
+          "confidence": 0.7
+        }
+      }
+    },
+    {
+      "sample": "sample_spam.eml",
+      "ground_truth": "SPAM",
+      "consensus_verdict": "NEEDS_REVIEW",
+      "rule": "RULE-09",
+      "confidence": 0.5,
+      "evidence_count": 5,
+      "prompt_injection": false,
+      "agent_reports": {
+        "ml": {
+          "verdict": "SPAM",
+          "confidence": 0.458
+        },
+        "gemini": {
+          "verdict": "ABSTAIN",
+          "confidence": 0.0
+        },
+        "laya": {
+          "verdict": "SUSPICIOUS",
+          "confidence": 0.7
+        }
+      }
+    },
+    {
+      "sample": "sample_suspicious.eml",
+      "ground_truth": "SUSPICIOUS",
+      "consensus_verdict": "NEEDS_REVIEW",
+      "rule": "RULE-09",
+      "confidence": 0.5,
+      "evidence_count": 3,
+      "prompt_injection": false,
+      "agent_reports": {
+        "ml": {
+          "verdict": "PHISHING",
+          "confidence": 0.322
+        },
+        "gemini": {
+          "verdict": "ABSTAIN",
+          "confidence": 0.0
+        },
+        "laya": {
+          "verdict": "SUSPICIOUS",
+          "confidence": 0.7
+        }
+      }
+    }
+  ]
+}

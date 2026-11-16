@@ -1,0 +1,35 @@
+From: "PayPal Account Security" <service-security@paypa1-support.org>
+Reply-To: attacker-collector@harvest-credential.net
+Return-Path: <bounce@attacker-vps.org>
+To: target-user@company.com
+Subject: URGENT: Your PayPal Account Has Been Restricted
+Date: Mon, 16 Nov 2026 01:15:00 +0000
+Message-ID: <pp-alert-89412@paypa1-support.org>
+Authentication-Results: mx.company.com; spf=fail smtp.mailfrom=bounce@attacker-vps.org; dkim=fail; dmarc=fail
+Received: from mail.attacker-vps.org (198.51.100.77) by mx.company.com; Mon, 16 Nov 2026 01:15:00 +0000
+Content-Type: multipart/mixed; boundary="boundary-phish-4819"
+
+--boundary-phish-4819
+Content-Type: text/plain; charset="utf-8"
+
+Dear Verified Member,
+
+We detected unauthorized logins to your wallet from an unrecognized terminal in Frankfurt.
+Your account access has been temporarily suspended to safeguard your balances.
+
+To unlock your privileges and avoid complete termination within 24 hours:
+1. Navigate immediately to your portal verification link:
+   http://198.51.100.77/paypal-login/auth.php
+2. Provide your primary payment card number and secret PIN.
+
+If you fail to verify before the 24-hour compliance window lapses, your account will be permanently closed.
+
+Sincerely,
+Customer Protection Operations
+PayPal Security Division
+--boundary-phish-4819
+Content-Type: application/octet-stream; name="account_statement_unlock.exe"
+Content-Disposition: attachment; filename="account_statement_unlock.exe"
+
+MZ_SIMULATED_BINARY_PAYLOAD_FOR_TESTING_ONLY
+--boundary-phish-4819--

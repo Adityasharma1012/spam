@@ -1,0 +1,2584 @@
+{
+  "benchmark_metadata": {
+    "evaluated_at": "2026-11-16T15:39:58.304467+00:00",
+    "corpus": "C:\\Users\\Gbn84\\Downloads\\20021010_spam\\spam",
+    "total_emails_evaluated": 100,
+    "ground_truth_label": "SPAM",
+    "runtime_seconds": 85.75,
+    "hardware": "NVIDIA GeForce RTX 4050 Laptop GPU (CUDA)",
+    "no_training_verification": "CONFIRMED: Inference strictly read-only; no weights modified"
+  },
+  "summary_metrics": {
+    "ml": {
+      "name": "Agent 1: ML Baseline (TF-IDF + Naive Bayes)",
+      "total_tested": 100,
+      "exact_spam_count": 36,
+      "exact_spam_accuracy_pct": 36.0,
+      "threat_captured_count": 72,
+      "threat_capture_rate_pct": 72.0,
+      "evaded_clean_count": 28,
+      "evasion_rate_pct": 28.0,
+      "needs_review_count": 0,
+      "needs_review_rate_pct": 0.0,
+      "abstained_count": 0,
+      "verdict_distribution": {
+        "PHISHING": 29,
+        "SPAM": 36,
+        "LEGITIMATE": 28,
+        "SUSPICIOUS": 7
+      }
+    },
+    "gemini": {
+      "name": "Agent 2: Gemini Cloud Adapter (Privacy Gated)",
+      "total_tested": 100,
+      "exact_spam_count": 0,
+      "exact_spam_accuracy_pct": 0.0,
+      "threat_captured_count": 0,
+      "threat_capture_rate_pct": 0.0,
+      "evaded_clean_count": 0,
+      "evasion_rate_pct": 0.0,
+      "needs_review_count": 0,
+      "needs_review_rate_pct": 0.0,
+      "abstained_count": 100,
+      "verdict_distribution": {
+        "ABSTAIN": 100
+      }
+    },
+    "laya": {
+      "name": "Agent 3: Laya System 1 (ModernBERT on CUDA)",
+      "total_tested": 100,
+      "exact_spam_count": 0,
+      "exact_spam_accuracy_pct": 0.0,
+      "threat_captured_count": 100,
+      "threat_capture_rate_pct": 100.0,
+      "evaded_clean_count": 0,
+      "evasion_rate_pct": 0.0,
+      "needs_review_count": 0,
+      "needs_review_rate_pct": 0.0,
+      "abstained_count": 0,
+      "verdict_distribution": {
+        "SUSPICIOUS": 100
+      }
+    },
+    "consensus": {
+      "name": "Consensus Engine (Multi-Agent Synthesis)",
+      "total_tested": 100,
+      "exact_spam_count": 0,
+      "exact_spam_accuracy_pct": 0.0,
+      "threat_captured_count": 20,
+      "threat_capture_rate_pct": 20.0,
+      "evaded_clean_count": 0,
+      "evasion_rate_pct": 0.0,
+      "needs_review_count": 80,
+      "needs_review_rate_pct": 80.0,
+      "abstained_count": 0,
+      "verdict_distribution": {
+        "NEEDS_REVIEW": 80,
+        "PHISHING": 18,
+        "SUSPICIOUS": 2
+      }
+    }
+  },
+  "sample_evaluations": [
+    {
+      "filename": "0001.bfc8d64d12b325ff385cca8d07b84288",
+      "ground_truth": "SPAM",
+      "evidence_count": 6,
+      "agents": {
+        "ml": {
+          "verdict": "PHISHING",
+          "confidence": 0.339
+        },
+        "gemini": {
+          "verdict": "ABSTAIN",
+          "confidence": 0.0
+        },
+        "laya": {
+          "verdict": "SUSPICIOUS",
+          "confidence": 0.7
+        }
+      },
+      "consensus": {
+        "verdict": "NEEDS_REVIEW",
+        "confidence": 0.5,
+        "rule": "RULE-09"
+      },
+      "elapsed_sec": 1.03
+    },
+    {
+      "filename": "0002.24b47bb3ce90708ae29d0aec1da08610",
+      "ground_truth": "SPAM",
+      "evidence_count": 12,
+      "agents": {
+        "ml": {
+          "verdict": "PHISHING",
+          "confidence": 0.353
+        },
+        "gemini": {
+          "verdict": "ABSTAIN",
+          "confidence": 0.0
+        },
+        "laya": {
+          "verdict": "SUSPICIOUS",
+          "confidence": 0.7
+        }
+      },
+      "consensus": {
+        "verdict": "NEEDS_REVIEW",
+        "confidence": 0.5,
+        "rule": "RULE-09"
+      },
+      "elapsed_sec": 0.42
+    },
+    {
+      "filename": "0003.4b3d943b8df71af248d12f8b2e7a224a",
+      "ground_truth": "SPAM",
+      "evidence_count": 10,
+      "agents": {
+        "ml": {
+          "verdict": "PHISHING",
+          "confidence": 0.333
+        },
+        "gemini": {
+          "verdict": "ABSTAIN",
+          "confidence": 0.0
+        },
+        "laya": {
+          "verdict": "SUSPICIOUS",
+          "confidence": 0.7
+        }
+      },
+      "consensus": {
+        "verdict": "NEEDS_REVIEW",
+        "confidence": 0.5,
+        "rule": "RULE-09"
+      },
+      "elapsed_sec": 0.37
+    },
+    {
+      "filename": "0004.1874ab60c71f0b31b580f313a3f6e777",
+      "ground_truth": "SPAM",
+      "evidence_count": 11,
+      "agents": {
+        "ml": {
+          "verdict": "PHISHING",
+          "confidence": 0.328
+        },
+        "gemini": {
+          "verdict": "ABSTAIN",
+          "confidence": 0.0
+        },
+        "laya": {
+          "verdict": "SUSPICIOUS",
+          "confidence": 0.7
+        }
+      },
+      "consensus": {
+        "verdict": "PHISHING",
+        "confidence": 0.95,
+        "rule": "RULE-01"
+      },
+      "elapsed_sec": 0.91
+    },
+    {
+      "filename": "0005.1f42bb885de0ef7fc5cd09d34dc2ba54",
+      "ground_truth": "SPAM",
+      "evidence_count": 10,
+      "agents": {
+        "ml": {
+          "verdict": "PHISHING",
+          "confidence": 0.315
+        },
+        "gemini": {
+          "verdict": "ABSTAIN",
+          "confidence": 0.0
+        },
+        "laya": {
+          "verdict": "SUSPICIOUS",
+          "confidence": 0.7
+        }
+      },
+      "consensus": {
+        "verdict": "NEEDS_REVIEW",
+        "confidence": 0.5,
+        "rule": "RULE-09"
+      },
+      "elapsed_sec": 0.42
+    },
+    {
+      "filename": "0006.7a32642f8c22bbeb85d6c3b5f3890a2c",
+      "ground_truth": "SPAM",
+      "evidence_count": 5,
+      "agents": {
+        "ml": {
+          "verdict": "SPAM",
+          "confidence": 0.296
+        },
+        "gemini": {
+          "verdict": "ABSTAIN",
+          "confidence": 0.0
+        },
+        "laya": {
+          "verdict": "SUSPICIOUS",
+          "confidence": 0.7
+        }
+      },
+      "consensus": {
+        "verdict": "NEEDS_REVIEW",
+        "confidence": 0.5,
+        "rule": "RULE-09"
+      },
+      "elapsed_sec": 0.85
+    },
+    {
+      "filename": "0007.859c901719011d56f8b652ea071c1f8b",
+      "ground_truth": "SPAM",
+      "evidence_count": 7,
+      "agents": {
+        "ml": {
+          "verdict": "SPAM",
+          "confidence": 0.337
+        },
+        "gemini": {
+          "verdict": "ABSTAIN",
+          "confidence": 0.0
+        },
+        "laya": {
+          "verdict": "SUSPICIOUS",
+          "confidence": 0.7
+        }
+      },
+      "consensus": {
+        "verdict": "NEEDS_REVIEW",
+        "confidence": 0.5,
+        "rule": "RULE-09"
+      },
+      "elapsed_sec": 0.35
+    },
+    {
+      "filename": "0008.9562918b57e044abfbce260cc875acde",
+      "ground_truth": "SPAM",
+      "evidence_count": 14,
+      "agents": {
+        "ml": {
+          "verdict": "LEGITIMATE",
+          "confidence": 0.286
+        },
+        "gemini": {
+          "verdict": "ABSTAIN",
+          "confidence": 0.0
+        },
+        "laya": {
+          "verdict": "SUSPICIOUS",
+          "confidence": 0.7
+        }
+      },
+      "consensus": {
+        "verdict": "NEEDS_REVIEW",
+        "confidence": 0.5,
+        "rule": "RULE-09"
+      },
+      "elapsed_sec": 0.17
+    },
+    {
+      "filename": "0009.c05e264fbf18783099b53dbc9a9aacda",
+      "ground_truth": "SPAM",
+      "evidence_count": 5,
+      "agents": {
+        "ml": {
+          "verdict": "SPAM",
+          "confidence": 0.301
+        },
+        "gemini": {
+          "verdict": "ABSTAIN",
+          "confidence": 0.0
+        },
+        "laya": {
+          "verdict": "SUSPICIOUS",
+          "confidence": 0.7
+        }
+      },
+      "consensus": {
+        "verdict": "NEEDS_REVIEW",
+        "confidence": 0.5,
+        "rule": "RULE-09"
+      },
+      "elapsed_sec": 1.0
+    },
+    {
+      "filename": "0010.7f5fb525755c45eb78efc18d7c9ea5aa",
+      "ground_truth": "SPAM",
+      "evidence_count": 5,
+      "agents": {
+        "ml": {
+          "verdict": "LEGITIMATE",
+          "confidence": 0.286
+        },
+        "gemini": {
+          "verdict": "ABSTAIN",
+          "confidence": 0.0
+        },
+        "laya": {
+          "verdict": "SUSPICIOUS",
+          "confidence": 0.7
+        }
+      },
+      "consensus": {
+        "verdict": "NEEDS_REVIEW",
+        "confidence": 0.5,
+        "rule": "RULE-09"
+      },
+      "elapsed_sec": 0.18
+    },
+    {
+      "filename": "0011.2a1247254a535bac29c476b86c708901",
+      "ground_truth": "SPAM",
+      "evidence_count": 6,
+      "agents": {
+        "ml": {
+          "verdict": "PHISHING",
+          "confidence": 0.301
+        },
+        "gemini": {
+          "verdict": "ABSTAIN",
+          "confidence": 0.0
+        },
+        "laya": {
+          "verdict": "SUSPICIOUS",
+          "confidence": 0.7
+        }
+      },
+      "consensus": {
+        "verdict": "PHISHING",
+        "confidence": 0.95,
+        "rule": "RULE-01"
+      },
+      "elapsed_sec": 0.42
+    },
+    {
+      "filename": "0012.7bc8e619ad0264979edce15083e70a02",
+      "ground_truth": "SPAM",
+      "evidence_count": 6,
+      "agents": {
+        "ml": {
+          "verdict": "LEGITIMATE",
+          "confidence": 0.286
+        },
+        "gemini": {
+          "verdict": "ABSTAIN",
+          "confidence": 0.0
+        },
+        "laya": {
+          "verdict": "SUSPICIOUS",
+          "confidence": 0.7
+        }
+      },
+      "consensus": {
+        "verdict": "NEEDS_REVIEW",
+        "confidence": 0.5,
+        "rule": "RULE-09"
+      },
+      "elapsed_sec": 0.18
+    },
+    {
+      "filename": "0013.9034ac0917f6fdb82c5ee6a7509029ed",
+      "ground_truth": "SPAM",
+      "evidence_count": 10,
+      "agents": {
+        "ml": {
+          "verdict": "PHISHING",
+          "confidence": 0.339
+        },
+        "gemini": {
+          "verdict": "ABSTAIN",
+          "confidence": 0.0
+        },
+        "laya": {
+          "verdict": "SUSPICIOUS",
+          "confidence": 0.7
+        }
+      },
+      "consensus": {
+        "verdict": "NEEDS_REVIEW",
+        "confidence": 0.5,
+        "rule": "RULE-09"
+      },
+      "elapsed_sec": 0.43
+    },
+    {
+      "filename": "0014.ed99ffe0f452b91be11684cbfe8d349c",
+      "ground_truth": "SPAM",
+      "evidence_count": 23,
+      "agents": {
+        "ml": {
+          "verdict": "SPAM",
+          "confidence": 0.306
+        },
+        "gemini": {
+          "verdict": "ABSTAIN",
+          "confidence": 0.0
+        },
+        "laya": {
+          "verdict": "SUSPICIOUS",
+          "confidence": 0.7
+        }
+      },
+      "consensus": {
+        "verdict": "PHISHING",
+        "confidence": 0.95,
+        "rule": "RULE-01"
+      },
+      "elapsed_sec": 0.18
+    },
+    {
+      "filename": "0015.1b871d654560011a0aaa29bb4e9054f7",
+      "ground_truth": "SPAM",
+      "evidence_count": 7,
+      "agents": {
+        "ml": {
+          "verdict": "SPAM",
+          "confidence": 0.369
+        },
+        "gemini": {
+          "verdict": "ABSTAIN",
+          "confidence": 0.0
+        },
+        "laya": {
+          "verdict": "SUSPICIOUS",
+          "confidence": 0.7
+        }
+      },
+      "consensus": {
+        "verdict": "NEEDS_REVIEW",
+        "confidence": 0.5,
+        "rule": "RULE-09"
+      },
+      "elapsed_sec": 0.35
+    },
+    {
+      "filename": "0016.f9c349935955e1ccc7626270da898445",
+      "ground_truth": "SPAM",
+      "evidence_count": 5,
+      "agents": {
+        "ml": {
+          "verdict": "LEGITIMATE",
+          "confidence": 0.323
+        },
+        "gemini": {
+          "verdict": "ABSTAIN",
+          "confidence": 0.0
+        },
+        "laya": {
+          "verdict": "SUSPICIOUS",
+          "confidence": 0.7
+        }
+      },
+      "consensus": {
+        "verdict": "NEEDS_REVIEW",
+        "confidence": 0.5,
+        "rule": "RULE-09"
+      },
+      "elapsed_sec": 0.18
+    },
+    {
+      "filename": "0017.49ab70c7a4042cb1c695a0e59a6ede54",
+      "ground_truth": "SPAM",
+      "evidence_count": 5,
+      "agents": {
+        "ml": {
+          "verdict": "LEGITIMATE",
+          "confidence": 0.329
+        },
+        "gemini": {
+          "verdict": "ABSTAIN",
+          "confidence": 0.0
+        },
+        "laya": {
+          "verdict": "SUSPICIOUS",
+          "confidence": 0.7
+        }
+      },
+      "consensus": {
+        "verdict": "NEEDS_REVIEW",
+        "confidence": 0.5,
+        "rule": "RULE-09"
+      },
+      "elapsed_sec": 7.65
+    },
+    {
+      "filename": "0018.259154a52bc55dcae491cfded60a5cd2",
+      "ground_truth": "SPAM",
+      "evidence_count": 7,
+      "agents": {
+        "ml": {
+          "verdict": "SPAM",
+          "confidence": 0.34
+        },
+        "gemini": {
+          "verdict": "ABSTAIN",
+          "confidence": 0.0
+        },
+        "laya": {
+          "verdict": "SUSPICIOUS",
+          "confidence": 0.7
+        }
+      },
+      "consensus": {
+        "verdict": "NEEDS_REVIEW",
+        "confidence": 0.5,
+        "rule": "RULE-09"
+      },
+      "elapsed_sec": 0.34
+    },
+    {
+      "filename": "0019.939e70d8367f315193e4bc5be80dc262",
+      "ground_truth": "SPAM",
+      "evidence_count": 4,
+      "agents": {
+        "ml": {
+          "verdict": "PHISHING",
+          "confidence": 0.358
+        },
+        "gemini": {
+          "verdict": "ABSTAIN",
+          "confidence": 0.0
+        },
+        "laya": {
+          "verdict": "SUSPICIOUS",
+          "confidence": 0.7
+        }
+      },
+      "consensus": {
+        "verdict": "NEEDS_REVIEW",
+        "confidence": 0.5,
+        "rule": "RULE-09"
+      },
+      "elapsed_sec": 2.98
+    },
+    {
+      "filename": "0020.4120dc06a0124a8688e96f8cff029113",
+      "ground_truth": "SPAM",
+      "evidence_count": 6,
+      "agents": {
+        "ml": {
+          "verdict": "SPAM",
+          "confidence": 0.334
+        },
+        "gemini": {
+          "verdict": "ABSTAIN",
+          "confidence": 0.0
+        },
+        "laya": {
+          "verdict": "SUSPICIOUS",
+          "confidence": 0.7
+        }
+      },
+      "consensus": {
+        "verdict": "NEEDS_REVIEW",
+        "confidence": 0.5,
+        "rule": "RULE-09"
+      },
+      "elapsed_sec": 0.98
+    },
+    {
+      "filename": "0021.15185fdb3fb02dffd041fa8f70d19791",
+      "ground_truth": "SPAM",
+      "evidence_count": 12,
+      "agents": {
+        "ml": {
+          "verdict": "PHISHING",
+          "confidence": 0.36
+        },
+        "gemini": {
+          "verdict": "ABSTAIN",
+          "confidence": 0.0
+        },
+        "laya": {
+          "verdict": "SUSPICIOUS",
+          "confidence": 0.7
+        }
+      },
+      "consensus": {
+        "verdict": "NEEDS_REVIEW",
+        "confidence": 0.5,
+        "rule": "RULE-09"
+      },
+      "elapsed_sec": 0.46
+    },
+    {
+      "filename": "0022.4b5cf3c16feb88dd6932a8c46a41946c",
+      "ground_truth": "SPAM",
+      "evidence_count": 8,
+      "agents": {
+        "ml": {
+          "verdict": "PHISHING",
+          "confidence": 0.425
+        },
+        "gemini": {
+          "verdict": "ABSTAIN",
+          "confidence": 0.0
+        },
+        "laya": {
+          "verdict": "SUSPICIOUS",
+          "confidence": 0.7
+        }
+      },
+      "consensus": {
+        "verdict": "SUSPICIOUS",
+        "confidence": 0.8,
+        "rule": "RULE-07"
+      },
+      "elapsed_sec": 0.88
+    },
+    {
+      "filename": "0023.4299adbda55862876440ecbc2fce6a67",
+      "ground_truth": "SPAM",
+      "evidence_count": 4,
+      "agents": {
+        "ml": {
+          "verdict": "LEGITIMATE",
+          "confidence": 0.296
+        },
+        "gemini": {
+          "verdict": "ABSTAIN",
+          "confidence": 0.0
+        },
+        "laya": {
+          "verdict": "SUSPICIOUS",
+          "confidence": 0.7
+        }
+      },
+      "consensus": {
+        "verdict": "NEEDS_REVIEW",
+        "confidence": 0.5,
+        "rule": "RULE-09"
+      },
+      "elapsed_sec": 2.79
+    },
+    {
+      "filename": "0024.fc4bd0b22cd7907e99f8a35b74655b15",
+      "ground_truth": "SPAM",
+      "evidence_count": 7,
+      "agents": {
+        "ml": {
+          "verdict": "LEGITIMATE",
+          "confidence": 0.286
+        },
+        "gemini": {
+          "verdict": "ABSTAIN",
+          "confidence": 0.0
+        },
+        "laya": {
+          "verdict": "SUSPICIOUS",
+          "confidence": 0.7
+        }
+      },
+      "consensus": {
+        "verdict": "NEEDS_REVIEW",
+        "confidence": 0.5,
+        "rule": "RULE-09"
+      },
+      "elapsed_sec": 0.17
+    },
+    {
+      "filename": "0025.97302502dc8e20ab7e7eb05f926e1bab",
+      "ground_truth": "SPAM",
+      "evidence_count": 14,
+      "agents": {
+        "ml": {
+          "verdict": "SPAM",
+          "confidence": 0.32
+        },
+        "gemini": {
+          "verdict": "ABSTAIN",
+          "confidence": 0.0
+        },
+        "laya": {
+          "verdict": "SUSPICIOUS",
+          "confidence": 0.7
+        }
+      },
+      "consensus": {
+        "verdict": "PHISHING",
+        "confidence": 0.95,
+        "rule": "RULE-01"
+      },
+      "elapsed_sec": 0.37
+    },
+    {
+      "filename": "0026.4f10fab6e6776379c17ee9c9ac7da4a8",
+      "ground_truth": "SPAM",
+      "evidence_count": 7,
+      "agents": {
+        "ml": {
+          "verdict": "LEGITIMATE",
+          "confidence": 0.286
+        },
+        "gemini": {
+          "verdict": "ABSTAIN",
+          "confidence": 0.0
+        },
+        "laya": {
+          "verdict": "SUSPICIOUS",
+          "confidence": 0.7
+        }
+      },
+      "consensus": {
+        "verdict": "PHISHING",
+        "confidence": 0.95,
+        "rule": "RULE-01"
+      },
+      "elapsed_sec": 0.17
+    },
+    {
+      "filename": "0027.028e0b165e8ea6f479e09a8f8cc7e50d",
+      "ground_truth": "SPAM",
+      "evidence_count": 3,
+      "agents": {
+        "ml": {
+          "verdict": "PHISHING",
+          "confidence": 0.358
+        },
+        "gemini": {
+          "verdict": "ABSTAIN",
+          "confidence": 0.0
+        },
+        "laya": {
+          "verdict": "SUSPICIOUS",
+          "confidence": 0.7
+        }
+      },
+      "consensus": {
+        "verdict": "NEEDS_REVIEW",
+        "confidence": 0.5,
+        "rule": "RULE-09"
+      },
+      "elapsed_sec": 5.69
+    },
+    {
+      "filename": "0028.83a43dd97923463030349506a56226c1",
+      "ground_truth": "SPAM",
+      "evidence_count": 10,
+      "agents": {
+        "ml": {
+          "verdict": "PHISHING",
+          "confidence": 0.348
+        },
+        "gemini": {
+          "verdict": "ABSTAIN",
+          "confidence": 0.0
+        },
+        "laya": {
+          "verdict": "SUSPICIOUS",
+          "confidence": 0.7
+        }
+      },
+      "consensus": {
+        "verdict": "NEEDS_REVIEW",
+        "confidence": 0.5,
+        "rule": "RULE-09"
+      },
+      "elapsed_sec": 0.41
+    },
+    {
+      "filename": "0029.2b149de91fef9f40880d27ce8c27aeb2",
+      "ground_truth": "SPAM",
+      "evidence_count": 25,
+      "agents": {
+        "ml": {
+          "verdict": "LEGITIMATE",
+          "confidence": 0.286
+        },
+        "gemini": {
+          "verdict": "ABSTAIN",
+          "confidence": 0.0
+        },
+        "laya": {
+          "verdict": "SUSPICIOUS",
+          "confidence": 0.7
+        }
+      },
+      "consensus": {
+        "verdict": "NEEDS_REVIEW",
+        "confidence": 0.5,
+        "rule": "RULE-09"
+      },
+      "elapsed_sec": 0.17
+    },
+    {
+      "filename": "0030.5d3444135a8ad95fc4ebf9a884076621",
+      "ground_truth": "SPAM",
+      "evidence_count": 7,
+      "agents": {
+        "ml": {
+          "verdict": "LEGITIMATE",
+          "confidence": 0.286
+        },
+        "gemini": {
+          "verdict": "ABSTAIN",
+          "confidence": 0.0
+        },
+        "laya": {
+          "verdict": "SUSPICIOUS",
+          "confidence": 0.7
+        }
+      },
+      "consensus": {
+        "verdict": "NEEDS_REVIEW",
+        "confidence": 0.5,
+        "rule": "RULE-09"
+      },
+      "elapsed_sec": 0.18
+    },
+    {
+      "filename": "0031.e68d1195ad2c1900a44de8631f8acd91",
+      "ground_truth": "SPAM",
+      "evidence_count": 5,
+      "agents": {
+        "ml": {
+          "verdict": "SUSPICIOUS",
+          "confidence": 0.7
+        },
+        "gemini": {
+          "verdict": "ABSTAIN",
+          "confidence": 0.0
+        },
+        "laya": {
+          "verdict": "SUSPICIOUS",
+          "confidence": 0.7
+        }
+      },
+      "consensus": {
+        "verdict": "PHISHING",
+        "confidence": 0.95,
+        "rule": "RULE-01"
+      },
+      "elapsed_sec": 0.19
+    },
+    {
+      "filename": "0032.081c3615bc9b91d09b6cbb9239ba8c99",
+      "ground_truth": "SPAM",
+      "evidence_count": 7,
+      "agents": {
+        "ml": {
+          "verdict": "LEGITIMATE",
+          "confidence": 0.401
+        },
+        "gemini": {
+          "verdict": "ABSTAIN",
+          "confidence": 0.0
+        },
+        "laya": {
+          "verdict": "SUSPICIOUS",
+          "confidence": 0.7
+        }
+      },
+      "consensus": {
+        "verdict": "NEEDS_REVIEW",
+        "confidence": 0.5,
+        "rule": "RULE-09"
+      },
+      "elapsed_sec": 3.6
+    },
+    {
+      "filename": "0033.489e59d3c7060b70e166ef7317c86807",
+      "ground_truth": "SPAM",
+      "evidence_count": 13,
+      "agents": {
+        "ml": {
+          "verdict": "PHISHING",
+          "confidence": 0.36
+        },
+        "gemini": {
+          "verdict": "ABSTAIN",
+          "confidence": 0.0
+        },
+        "laya": {
+          "verdict": "SUSPICIOUS",
+          "confidence": 0.7
+        }
+      },
+      "consensus": {
+        "verdict": "NEEDS_REVIEW",
+        "confidence": 0.5,
+        "rule": "RULE-09"
+      },
+      "elapsed_sec": 0.48
+    },
+    {
+      "filename": "0034.d5a5e526aa6b249ed6ca184548a44b1a",
+      "ground_truth": "SPAM",
+      "evidence_count": 5,
+      "agents": {
+        "ml": {
+          "verdict": "SPAM",
+          "confidence": 0.32
+        },
+        "gemini": {
+          "verdict": "ABSTAIN",
+          "confidence": 0.0
+        },
+        "laya": {
+          "verdict": "SUSPICIOUS",
+          "confidence": 0.7
+        }
+      },
+      "consensus": {
+        "verdict": "NEEDS_REVIEW",
+        "confidence": 0.5,
+        "rule": "RULE-09"
+      },
+      "elapsed_sec": 0.65
+    },
+    {
+      "filename": "0035.8e582263070076dfe6000411d9b13ce6",
+      "ground_truth": "SPAM",
+      "evidence_count": 6,
+      "agents": {
+        "ml": {
+          "verdict": "PHISHING",
+          "confidence": 0.388
+        },
+        "gemini": {
+          "verdict": "ABSTAIN",
+          "confidence": 0.0
+        },
+        "laya": {
+          "verdict": "SUSPICIOUS",
+          "confidence": 0.7
+        }
+      },
+      "consensus": {
+        "verdict": "NEEDS_REVIEW",
+        "confidence": 0.5,
+        "rule": "RULE-09"
+      },
+      "elapsed_sec": 0.44
+    },
+    {
+      "filename": "0036.8e582263070076dfe6000411d9b13ce6",
+      "ground_truth": "SPAM",
+      "evidence_count": 6,
+      "agents": {
+        "ml": {
+          "verdict": "PHISHING",
+          "confidence": 0.388
+        },
+        "gemini": {
+          "verdict": "ABSTAIN",
+          "confidence": 0.0
+        },
+        "laya": {
+          "verdict": "SUSPICIOUS",
+          "confidence": 0.7
+        }
+      },
+      "consensus": {
+        "verdict": "NEEDS_REVIEW",
+        "confidence": 0.5,
+        "rule": "RULE-09"
+      },
+      "elapsed_sec": 0.43
+    },
+    {
+      "filename": "0037.7ce3307b56dd90453027a6630179282e",
+      "ground_truth": "SPAM",
+      "evidence_count": 20,
+      "agents": {
+        "ml": {
+          "verdict": "SPAM",
+          "confidence": 0.345
+        },
+        "gemini": {
+          "verdict": "ABSTAIN",
+          "confidence": 0.0
+        },
+        "laya": {
+          "verdict": "SUSPICIOUS",
+          "confidence": 0.7
+        }
+      },
+      "consensus": {
+        "verdict": "NEEDS_REVIEW",
+        "confidence": 0.5,
+        "rule": "RULE-09"
+      },
+      "elapsed_sec": 0.22
+    },
+    {
+      "filename": "0038.7ce3307b56dd90453027a6630179282e",
+      "ground_truth": "SPAM",
+      "evidence_count": 20,
+      "agents": {
+        "ml": {
+          "verdict": "SPAM",
+          "confidence": 0.345
+        },
+        "gemini": {
+          "verdict": "ABSTAIN",
+          "confidence": 0.0
+        },
+        "laya": {
+          "verdict": "SUSPICIOUS",
+          "confidence": 0.7
+        }
+      },
+      "consensus": {
+        "verdict": "NEEDS_REVIEW",
+        "confidence": 0.5,
+        "rule": "RULE-09"
+      },
+      "elapsed_sec": 0.21
+    },
+    {
+      "filename": "0039.256602e2cb5a5b373bdd1fb631d9f452",
+      "ground_truth": "SPAM",
+      "evidence_count": 5,
+      "agents": {
+        "ml": {
+          "verdict": "PHISHING",
+          "confidence": 0.453
+        },
+        "gemini": {
+          "verdict": "ABSTAIN",
+          "confidence": 0.0
+        },
+        "laya": {
+          "verdict": "SUSPICIOUS",
+          "confidence": 0.7
+        }
+      },
+      "consensus": {
+        "verdict": "NEEDS_REVIEW",
+        "confidence": 0.5,
+        "rule": "RULE-09"
+      },
+      "elapsed_sec": 0.18
+    },
+    {
+      "filename": "0040.256602e2cb5a5b373bdd1fb631d9f452",
+      "ground_truth": "SPAM",
+      "evidence_count": 5,
+      "agents": {
+        "ml": {
+          "verdict": "PHISHING",
+          "confidence": 0.453
+        },
+        "gemini": {
+          "verdict": "ABSTAIN",
+          "confidence": 0.0
+        },
+        "laya": {
+          "verdict": "SUSPICIOUS",
+          "confidence": 0.7
+        }
+      },
+      "consensus": {
+        "verdict": "NEEDS_REVIEW",
+        "confidence": 0.5,
+        "rule": "RULE-09"
+      },
+      "elapsed_sec": 0.18
+    },
+    {
+      "filename": "0041.21cc985cc36d931916863aed24de8c27",
+      "ground_truth": "SPAM",
+      "evidence_count": 7,
+      "agents": {
+        "ml": {
+          "verdict": "SUSPICIOUS",
+          "confidence": 0.7
+        },
+        "gemini": {
+          "verdict": "ABSTAIN",
+          "confidence": 0.0
+        },
+        "laya": {
+          "verdict": "SUSPICIOUS",
+          "confidence": 0.7
+        }
+      },
+      "consensus": {
+        "verdict": "PHISHING",
+        "confidence": 0.95,
+        "rule": "RULE-01"
+      },
+      "elapsed_sec": 0.19
+    },
+    {
+      "filename": "0042.21cc985cc36d931916863aed24de8c27",
+      "ground_truth": "SPAM",
+      "evidence_count": 7,
+      "agents": {
+        "ml": {
+          "verdict": "SUSPICIOUS",
+          "confidence": 0.7
+        },
+        "gemini": {
+          "verdict": "ABSTAIN",
+          "confidence": 0.0
+        },
+        "laya": {
+          "verdict": "SUSPICIOUS",
+          "confidence": 0.7
+        }
+      },
+      "consensus": {
+        "verdict": "PHISHING",
+        "confidence": 0.95,
+        "rule": "RULE-01"
+      },
+      "elapsed_sec": 0.19
+    },
+    {
+      "filename": "0043.8d93819b95ff90bf2e2b141c2909bfc9",
+      "ground_truth": "SPAM",
+      "evidence_count": 12,
+      "agents": {
+        "ml": {
+          "verdict": "PHISHING",
+          "confidence": 0.34
+        },
+        "gemini": {
+          "verdict": "ABSTAIN",
+          "confidence": 0.0
+        },
+        "laya": {
+          "verdict": "SUSPICIOUS",
+          "confidence": 0.7
+        }
+      },
+      "consensus": {
+        "verdict": "PHISHING",
+        "confidence": 0.95,
+        "rule": "RULE-01"
+      },
+      "elapsed_sec": 2.44
+    },
+    {
+      "filename": "0044.889d785885f092c269741b11f2124dce",
+      "ground_truth": "SPAM",
+      "evidence_count": 5,
+      "agents": {
+        "ml": {
+          "verdict": "LEGITIMATE",
+          "confidence": 0.286
+        },
+        "gemini": {
+          "verdict": "ABSTAIN",
+          "confidence": 0.0
+        },
+        "laya": {
+          "verdict": "SUSPICIOUS",
+          "confidence": 0.7
+        }
+      },
+      "consensus": {
+        "verdict": "NEEDS_REVIEW",
+        "confidence": 0.5,
+        "rule": "RULE-09"
+      },
+      "elapsed_sec": 0.2
+    },
+    {
+      "filename": "0045.75baa6797e2a65053a8373d5aa96f594",
+      "ground_truth": "SPAM",
+      "evidence_count": 7,
+      "agents": {
+        "ml": {
+          "verdict": "SPAM",
+          "confidence": 0.337
+        },
+        "gemini": {
+          "verdict": "ABSTAIN",
+          "confidence": 0.0
+        },
+        "laya": {
+          "verdict": "SUSPICIOUS",
+          "confidence": 0.7
+        }
+      },
+      "consensus": {
+        "verdict": "NEEDS_REVIEW",
+        "confidence": 0.5,
+        "rule": "RULE-09"
+      },
+      "elapsed_sec": 0.38
+    },
+    {
+      "filename": "0046.0b4fff9cd7cffe94cc4f04bbf3928c28",
+      "ground_truth": "SPAM",
+      "evidence_count": 4,
+      "agents": {
+        "ml": {
+          "verdict": "SPAM",
+          "confidence": 0.347
+        },
+        "gemini": {
+          "verdict": "ABSTAIN",
+          "confidence": 0.0
+        },
+        "laya": {
+          "verdict": "SUSPICIOUS",
+          "confidence": 0.7
+        }
+      },
+      "consensus": {
+        "verdict": "NEEDS_REVIEW",
+        "confidence": 0.5,
+        "rule": "RULE-09"
+      },
+      "elapsed_sec": 0.34
+    },
+    {
+      "filename": "0047.376bd7728ee94b32bc23429d9c51bae5",
+      "ground_truth": "SPAM",
+      "evidence_count": 25,
+      "agents": {
+        "ml": {
+          "verdict": "SPAM",
+          "confidence": 0.342
+        },
+        "gemini": {
+          "verdict": "ABSTAIN",
+          "confidence": 0.0
+        },
+        "laya": {
+          "verdict": "SUSPICIOUS",
+          "confidence": 0.7
+        }
+      },
+      "consensus": {
+        "verdict": "NEEDS_REVIEW",
+        "confidence": 0.5,
+        "rule": "RULE-09"
+      },
+      "elapsed_sec": 0.19
+    },
+    {
+      "filename": "0048.462325dc69a8dc74462723ec0d20a5cd",
+      "ground_truth": "SPAM",
+      "evidence_count": 7,
+      "agents": {
+        "ml": {
+          "verdict": "SPAM",
+          "confidence": 0.337
+        },
+        "gemini": {
+          "verdict": "ABSTAIN",
+          "confidence": 0.0
+        },
+        "laya": {
+          "verdict": "SUSPICIOUS",
+          "confidence": 0.7
+        }
+      },
+      "consensus": {
+        "verdict": "NEEDS_REVIEW",
+        "confidence": 0.5,
+        "rule": "RULE-09"
+      },
+      "elapsed_sec": 0.38
+    },
+    {
+      "filename": "0049.625bab436c7fc6299cfceeaa24e198ae",
+      "ground_truth": "SPAM",
+      "evidence_count": 7,
+      "agents": {
+        "ml": {
+          "verdict": "LEGITIMATE",
+          "confidence": 0.286
+        },
+        "gemini": {
+          "verdict": "ABSTAIN",
+          "confidence": 0.0
+        },
+        "laya": {
+          "verdict": "SUSPICIOUS",
+          "confidence": 0.7
+        }
+      },
+      "consensus": {
+        "verdict": "NEEDS_REVIEW",
+        "confidence": 0.5,
+        "rule": "RULE-09"
+      },
+      "elapsed_sec": 0.17
+    },
+    {
+      "filename": "0050.b8200e218e5a5a433f897e9495253a30",
+      "ground_truth": "SPAM",
+      "evidence_count": 7,
+      "agents": {
+        "ml": {
+          "verdict": "SUSPICIOUS",
+          "confidence": 0.7
+        },
+        "gemini": {
+          "verdict": "ABSTAIN",
+          "confidence": 0.0
+        },
+        "laya": {
+          "verdict": "SUSPICIOUS",
+          "confidence": 0.7
+        }
+      },
+      "consensus": {
+        "verdict": "PHISHING",
+        "confidence": 0.95,
+        "rule": "RULE-01"
+      },
+      "elapsed_sec": 0.2
+    },
+    {
+      "filename": "0051.374f4d4300a5d39544b2f052e7a9429d",
+      "ground_truth": "SPAM",
+      "evidence_count": 10,
+      "agents": {
+        "ml": {
+          "verdict": "PHISHING",
+          "confidence": 0.33
+        },
+        "gemini": {
+          "verdict": "ABSTAIN",
+          "confidence": 0.0
+        },
+        "laya": {
+          "verdict": "SUSPICIOUS",
+          "confidence": 0.7
+        }
+      },
+      "consensus": {
+        "verdict": "NEEDS_REVIEW",
+        "confidence": 0.5,
+        "rule": "RULE-09"
+      },
+      "elapsed_sec": 2.28
+    },
+    {
+      "filename": "0052.f12ac251d1fbdc679daadc6b97229e63",
+      "ground_truth": "SPAM",
+      "evidence_count": 7,
+      "agents": {
+        "ml": {
+          "verdict": "LEGITIMATE",
+          "confidence": 0.286
+        },
+        "gemini": {
+          "verdict": "ABSTAIN",
+          "confidence": 0.0
+        },
+        "laya": {
+          "verdict": "SUSPICIOUS",
+          "confidence": 0.7
+        }
+      },
+      "consensus": {
+        "verdict": "NEEDS_REVIEW",
+        "confidence": 0.5,
+        "rule": "RULE-09"
+      },
+      "elapsed_sec": 0.18
+    },
+    {
+      "filename": "0053.92bcea73123d0ea0fb26c285d5e045a9",
+      "ground_truth": "SPAM",
+      "evidence_count": 6,
+      "agents": {
+        "ml": {
+          "verdict": "SPAM",
+          "confidence": 0.363
+        },
+        "gemini": {
+          "verdict": "ABSTAIN",
+          "confidence": 0.0
+        },
+        "laya": {
+          "verdict": "SUSPICIOUS",
+          "confidence": 0.7
+        }
+      },
+      "consensus": {
+        "verdict": "NEEDS_REVIEW",
+        "confidence": 0.5,
+        "rule": "RULE-09"
+      },
+      "elapsed_sec": 0.3
+    },
+    {
+      "filename": "0054.839a9c0a07f13718570da944986a898a",
+      "ground_truth": "SPAM",
+      "evidence_count": 4,
+      "agents": {
+        "ml": {
+          "verdict": "LEGITIMATE",
+          "confidence": 0.318
+        },
+        "gemini": {
+          "verdict": "ABSTAIN",
+          "confidence": 0.0
+        },
+        "laya": {
+          "verdict": "SUSPICIOUS",
+          "confidence": 0.7
+        }
+      },
+      "consensus": {
+        "verdict": "NEEDS_REVIEW",
+        "confidence": 0.5,
+        "rule": "RULE-09"
+      },
+      "elapsed_sec": 0.23
+    },
+    {
+      "filename": "0055.8b2154bb7ec1f411495f37f519f1835d",
+      "ground_truth": "SPAM",
+      "evidence_count": 6,
+      "agents": {
+        "ml": {
+          "verdict": "LEGITIMATE",
+          "confidence": 0.358
+        },
+        "gemini": {
+          "verdict": "ABSTAIN",
+          "confidence": 0.0
+        },
+        "laya": {
+          "verdict": "SUSPICIOUS",
+          "confidence": 0.7
+        }
+      },
+      "consensus": {
+        "verdict": "NEEDS_REVIEW",
+        "confidence": 0.5,
+        "rule": "RULE-09"
+      },
+      "elapsed_sec": 0.18
+    },
+    {
+      "filename": "0056.0f99dde58a7c4e18944397ab47e0412c",
+      "ground_truth": "SPAM",
+      "evidence_count": 7,
+      "agents": {
+        "ml": {
+          "verdict": "SPAM",
+          "confidence": 0.345
+        },
+        "gemini": {
+          "verdict": "ABSTAIN",
+          "confidence": 0.0
+        },
+        "laya": {
+          "verdict": "SUSPICIOUS",
+          "confidence": 0.7
+        }
+      },
+      "consensus": {
+        "verdict": "NEEDS_REVIEW",
+        "confidence": 0.5,
+        "rule": "RULE-09"
+      },
+      "elapsed_sec": 0.18
+    },
+    {
+      "filename": "0057.92fdae44bdd1d9e5461eef3c852dfd23",
+      "ground_truth": "SPAM",
+      "evidence_count": 7,
+      "agents": {
+        "ml": {
+          "verdict": "SPAM",
+          "confidence": 0.337
+        },
+        "gemini": {
+          "verdict": "ABSTAIN",
+          "confidence": 0.0
+        },
+        "laya": {
+          "verdict": "SUSPICIOUS",
+          "confidence": 0.7
+        }
+      },
+      "consensus": {
+        "verdict": "NEEDS_REVIEW",
+        "confidence": 0.5,
+        "rule": "RULE-09"
+      },
+      "elapsed_sec": 0.37
+    },
+    {
+      "filename": "0058.abb13c5db31d26a58607aac809573ed4",
+      "ground_truth": "SPAM",
+      "evidence_count": 7,
+      "agents": {
+        "ml": {
+          "verdict": "SUSPICIOUS",
+          "confidence": 0.7
+        },
+        "gemini": {
+          "verdict": "ABSTAIN",
+          "confidence": 0.0
+        },
+        "laya": {
+          "verdict": "SUSPICIOUS",
+          "confidence": 0.7
+        }
+      },
+      "consensus": {
+        "verdict": "PHISHING",
+        "confidence": 0.95,
+        "rule": "RULE-01"
+      },
+      "elapsed_sec": 0.18
+    },
+    {
+      "filename": "0059.a633106e3ce62fa7b46c2e4dc8c666d3",
+      "ground_truth": "SPAM",
+      "evidence_count": 7,
+      "agents": {
+        "ml": {
+          "verdict": "SPAM",
+          "confidence": 0.342
+        },
+        "gemini": {
+          "verdict": "ABSTAIN",
+          "confidence": 0.0
+        },
+        "laya": {
+          "verdict": "SUSPICIOUS",
+          "confidence": 0.7
+        }
+      },
+      "consensus": {
+        "verdict": "NEEDS_REVIEW",
+        "confidence": 0.5,
+        "rule": "RULE-09"
+      },
+      "elapsed_sec": 0.62
+    },
+    {
+      "filename": "0060.140f80780520fa19b360ddcb05838a67",
+      "ground_truth": "SPAM",
+      "evidence_count": 6,
+      "agents": {
+        "ml": {
+          "verdict": "SPAM",
+          "confidence": 0.398
+        },
+        "gemini": {
+          "verdict": "ABSTAIN",
+          "confidence": 0.0
+        },
+        "laya": {
+          "verdict": "SUSPICIOUS",
+          "confidence": 0.7
+        }
+      },
+      "consensus": {
+        "verdict": "NEEDS_REVIEW",
+        "confidence": 0.5,
+        "rule": "RULE-09"
+      },
+      "elapsed_sec": 1.95
+    },
+    {
+      "filename": "0061.c148ebba16540e48c7aae2e3f733a8a3",
+      "ground_truth": "SPAM",
+      "evidence_count": 18,
+      "agents": {
+        "ml": {
+          "verdict": "SPAM",
+          "confidence": 0.306
+        },
+        "gemini": {
+          "verdict": "ABSTAIN",
+          "confidence": 0.0
+        },
+        "laya": {
+          "verdict": "SUSPICIOUS",
+          "confidence": 0.7
+        }
+      },
+      "consensus": {
+        "verdict": "NEEDS_REVIEW",
+        "confidence": 0.5,
+        "rule": "RULE-09"
+      },
+      "elapsed_sec": 0.19
+    },
+    {
+      "filename": "0062.41f708df91642411f0fd8f91e28d3521",
+      "ground_truth": "SPAM",
+      "evidence_count": 6,
+      "agents": {
+        "ml": {
+          "verdict": "SPAM",
+          "confidence": 0.394
+        },
+        "gemini": {
+          "verdict": "ABSTAIN",
+          "confidence": 0.0
+        },
+        "laya": {
+          "verdict": "SUSPICIOUS",
+          "confidence": 0.7
+        }
+      },
+      "consensus": {
+        "verdict": "NEEDS_REVIEW",
+        "confidence": 0.5,
+        "rule": "RULE-09"
+      },
+      "elapsed_sec": 1.29
+    },
+    {
+      "filename": "0063.3bec5361a5edfdbcc371241b3d74e3bf",
+      "ground_truth": "SPAM",
+      "evidence_count": 6,
+      "agents": {
+        "ml": {
+          "verdict": "SPAM",
+          "confidence": 0.334
+        },
+        "gemini": {
+          "verdict": "ABSTAIN",
+          "confidence": 0.0
+        },
+        "laya": {
+          "verdict": "SUSPICIOUS",
+          "confidence": 0.7
+        }
+      },
+      "consensus": {
+        "verdict": "NEEDS_REVIEW",
+        "confidence": 0.5,
+        "rule": "RULE-09"
+      },
+      "elapsed_sec": 2.28
+    },
+    {
+      "filename": "0064.d700742b9815d990b2e5a7921e8d854c",
+      "ground_truth": "SPAM",
+      "evidence_count": 7,
+      "agents": {
+        "ml": {
+          "verdict": "LEGITIMATE",
+          "confidence": 0.286
+        },
+        "gemini": {
+          "verdict": "ABSTAIN",
+          "confidence": 0.0
+        },
+        "laya": {
+          "verdict": "SUSPICIOUS",
+          "confidence": 0.7
+        }
+      },
+      "consensus": {
+        "verdict": "NEEDS_REVIEW",
+        "confidence": 0.5,
+        "rule": "RULE-09"
+      },
+      "elapsed_sec": 1.58
+    },
+    {
+      "filename": "0065.18d2edcf9aa0e940651b5fdd218ac019",
+      "ground_truth": "SPAM",
+      "evidence_count": 7,
+      "agents": {
+        "ml": {
+          "verdict": "LEGITIMATE",
+          "confidence": 0.286
+        },
+        "gemini": {
+          "verdict": "ABSTAIN",
+          "confidence": 0.0
+        },
+        "laya": {
+          "verdict": "SUSPICIOUS",
+          "confidence": 0.7
+        }
+      },
+      "consensus": {
+        "verdict": "NEEDS_REVIEW",
+        "confidence": 0.5,
+        "rule": "RULE-09"
+      },
+      "elapsed_sec": 0.19
+    },
+    {
+      "filename": "0066.93ccd9599561c5277989f03b575d6bff",
+      "ground_truth": "SPAM",
+      "evidence_count": 5,
+      "agents": {
+        "ml": {
+          "verdict": "PHISHING",
+          "confidence": 0.328
+        },
+        "gemini": {
+          "verdict": "ABSTAIN",
+          "confidence": 0.0
+        },
+        "laya": {
+          "verdict": "SUSPICIOUS",
+          "confidence": 0.7
+        }
+      },
+      "consensus": {
+        "verdict": "NEEDS_REVIEW",
+        "confidence": 0.5,
+        "rule": "RULE-09"
+      },
+      "elapsed_sec": 0.23
+    },
+    {
+      "filename": "0067.02c6e51107f39ee60453ff8e7372101d",
+      "ground_truth": "SPAM",
+      "evidence_count": 15,
+      "agents": {
+        "ml": {
+          "verdict": "LEGITIMATE",
+          "confidence": 0.286
+        },
+        "gemini": {
+          "verdict": "ABSTAIN",
+          "confidence": 0.0
+        },
+        "laya": {
+          "verdict": "SUSPICIOUS",
+          "confidence": 0.7
+        }
+      },
+      "consensus": {
+        "verdict": "PHISHING",
+        "confidence": 0.95,
+        "rule": "RULE-01"
+      },
+      "elapsed_sec": 0.17
+    },
+    {
+      "filename": "0068.1626952077798d4f2d5eb30e48bc49b3",
+      "ground_truth": "SPAM",
+      "evidence_count": 5,
+      "agents": {
+        "ml": {
+          "verdict": "SPAM",
+          "confidence": 0.358
+        },
+        "gemini": {
+          "verdict": "ABSTAIN",
+          "confidence": 0.0
+        },
+        "laya": {
+          "verdict": "SUSPICIOUS",
+          "confidence": 0.7
+        }
+      },
+      "consensus": {
+        "verdict": "NEEDS_REVIEW",
+        "confidence": 0.5,
+        "rule": "RULE-09"
+      },
+      "elapsed_sec": 0.28
+    },
+    {
+      "filename": "0069.a0b6cfde0e477af7f406ee756ba53826",
+      "ground_truth": "SPAM",
+      "evidence_count": 7,
+      "agents": {
+        "ml": {
+          "verdict": "PHISHING",
+          "confidence": 0.353
+        },
+        "gemini": {
+          "verdict": "ABSTAIN",
+          "confidence": 0.0
+        },
+        "laya": {
+          "verdict": "SUSPICIOUS",
+          "confidence": 0.7
+        }
+      },
+      "consensus": {
+        "verdict": "NEEDS_REVIEW",
+        "confidence": 0.5,
+        "rule": "RULE-09"
+      },
+      "elapsed_sec": 0.37
+    },
+    {
+      "filename": "0070.977e083b104717202fe944ae6065624e",
+      "ground_truth": "SPAM",
+      "evidence_count": 5,
+      "agents": {
+        "ml": {
+          "verdict": "PHISHING",
+          "confidence": 0.328
+        },
+        "gemini": {
+          "verdict": "ABSTAIN",
+          "confidence": 0.0
+        },
+        "laya": {
+          "verdict": "SUSPICIOUS",
+          "confidence": 0.7
+        }
+      },
+      "consensus": {
+        "verdict": "NEEDS_REVIEW",
+        "confidence": 0.5,
+        "rule": "RULE-09"
+      },
+      "elapsed_sec": 0.25
+    },
+    {
+      "filename": "0071.4c3840b98dc207623d0c0e66a6d40af2",
+      "ground_truth": "SPAM",
+      "evidence_count": 7,
+      "agents": {
+        "ml": {
+          "verdict": "SPAM",
+          "confidence": 0.372
+        },
+        "gemini": {
+          "verdict": "ABSTAIN",
+          "confidence": 0.0
+        },
+        "laya": {
+          "verdict": "SUSPICIOUS",
+          "confidence": 0.7
+        }
+      },
+      "consensus": {
+        "verdict": "NEEDS_REVIEW",
+        "confidence": 0.5,
+        "rule": "RULE-09"
+      },
+      "elapsed_sec": 1.47
+    },
+    {
+      "filename": "0072.f97a14d667569ebbc0502bb2c7beec27",
+      "ground_truth": "SPAM",
+      "evidence_count": 12,
+      "agents": {
+        "ml": {
+          "verdict": "SPAM",
+          "confidence": 0.342
+        },
+        "gemini": {
+          "verdict": "ABSTAIN",
+          "confidence": 0.0
+        },
+        "laya": {
+          "verdict": "SUSPICIOUS",
+          "confidence": 0.7
+        }
+      },
+      "consensus": {
+        "verdict": "NEEDS_REVIEW",
+        "confidence": 0.5,
+        "rule": "RULE-09"
+      },
+      "elapsed_sec": 1.58
+    },
+    {
+      "filename": "0073.d57c16429fa19fbebfb9aec34f391aa2",
+      "ground_truth": "SPAM",
+      "evidence_count": 7,
+      "agents": {
+        "ml": {
+          "verdict": "SPAM",
+          "confidence": 0.328
+        },
+        "gemini": {
+          "verdict": "ABSTAIN",
+          "confidence": 0.0
+        },
+        "laya": {
+          "verdict": "SUSPICIOUS",
+          "confidence": 0.7
+        }
+      },
+      "consensus": {
+        "verdict": "NEEDS_REVIEW",
+        "confidence": 0.5,
+        "rule": "RULE-09"
+      },
+      "elapsed_sec": 0.53
+    },
+    {
+      "filename": "0074.9948514a1f3aac3f27ba2c20db7b0441",
+      "ground_truth": "SPAM",
+      "evidence_count": 7,
+      "agents": {
+        "ml": {
+          "verdict": "SUSPICIOUS",
+          "confidence": 0.7
+        },
+        "gemini": {
+          "verdict": "ABSTAIN",
+          "confidence": 0.0
+        },
+        "laya": {
+          "verdict": "SUSPICIOUS",
+          "confidence": 0.7
+        }
+      },
+      "consensus": {
+        "verdict": "PHISHING",
+        "confidence": 0.95,
+        "rule": "RULE-01"
+      },
+      "elapsed_sec": 0.18
+    },
+    {
+      "filename": "0075.4568998f41d50bccf8f7c3d4aeb7a425",
+      "ground_truth": "SPAM",
+      "evidence_count": 8,
+      "agents": {
+        "ml": {
+          "verdict": "SPAM",
+          "confidence": 0.3
+        },
+        "gemini": {
+          "verdict": "ABSTAIN",
+          "confidence": 0.0
+        },
+        "laya": {
+          "verdict": "SUSPICIOUS",
+          "confidence": 0.7
+        }
+      },
+      "consensus": {
+        "verdict": "SUSPICIOUS",
+        "confidence": 0.8,
+        "rule": "RULE-07"
+      },
+      "elapsed_sec": 0.35
+    },
+    {
+      "filename": "0076.770f0e7b8378a47a945043434f6f43df",
+      "ground_truth": "SPAM",
+      "evidence_count": 9,
+      "agents": {
+        "ml": {
+          "verdict": "PHISHING",
+          "confidence": 0.338
+        },
+        "gemini": {
+          "verdict": "ABSTAIN",
+          "confidence": 0.0
+        },
+        "laya": {
+          "verdict": "SUSPICIOUS",
+          "confidence": 0.7
+        }
+      },
+      "consensus": {
+        "verdict": "NEEDS_REVIEW",
+        "confidence": 0.5,
+        "rule": "RULE-09"
+      },
+      "elapsed_sec": 3.66
+    },
+    {
+      "filename": "0077.a5c41f056918bde0d5f9be424714766e",
+      "ground_truth": "SPAM",
+      "evidence_count": 6,
+      "agents": {
+        "ml": {
+          "verdict": "PHISHING",
+          "confidence": 0.332
+        },
+        "gemini": {
+          "verdict": "ABSTAIN",
+          "confidence": 0.0
+        },
+        "laya": {
+          "verdict": "SUSPICIOUS",
+          "confidence": 0.7
+        }
+      },
+      "consensus": {
+        "verdict": "NEEDS_REVIEW",
+        "confidence": 0.5,
+        "rule": "RULE-09"
+      },
+      "elapsed_sec": 0.41
+    },
+    {
+      "filename": "0078.8ff64b5c77f9c9618bd7b119ae14c8b2",
+      "ground_truth": "SPAM",
+      "evidence_count": 6,
+      "agents": {
+        "ml": {
+          "verdict": "LEGITIMATE",
+          "confidence": 0.295
+        },
+        "gemini": {
+          "verdict": "ABSTAIN",
+          "confidence": 0.0
+        },
+        "laya": {
+          "verdict": "SUSPICIOUS",
+          "confidence": 0.7
+        }
+      },
+      "consensus": {
+        "verdict": "NEEDS_REVIEW",
+        "confidence": 0.5,
+        "rule": "RULE-09"
+      },
+      "elapsed_sec": 0.51
+    },
+    {
+      "filename": "0079.4a5fbaf2e531918c44642b3cfae40089",
+      "ground_truth": "SPAM",
+      "evidence_count": 7,
+      "agents": {
+        "ml": {
+          "verdict": "PHISHING",
+          "confidence": 0.345
+        },
+        "gemini": {
+          "verdict": "ABSTAIN",
+          "confidence": 0.0
+        },
+        "laya": {
+          "verdict": "SUSPICIOUS",
+          "confidence": 0.7
+        }
+      },
+      "consensus": {
+        "verdict": "NEEDS_REVIEW",
+        "confidence": 0.5,
+        "rule": "RULE-09"
+      },
+      "elapsed_sec": 2.46
+    },
+    {
+      "filename": "0080.77af9ca7f967f055062aade45001129e",
+      "ground_truth": "SPAM",
+      "evidence_count": 7,
+      "agents": {
+        "ml": {
+          "verdict": "SPAM",
+          "confidence": 0.342
+        },
+        "gemini": {
+          "verdict": "ABSTAIN",
+          "confidence": 0.0
+        },
+        "laya": {
+          "verdict": "SUSPICIOUS",
+          "confidence": 0.7
+        }
+      },
+      "consensus": {
+        "verdict": "NEEDS_REVIEW",
+        "confidence": 0.5,
+        "rule": "RULE-09"
+      },
+      "elapsed_sec": 0.32
+    },
+    {
+      "filename": "0081.3309521659461b743e1bfc3dc688a5f1",
+      "ground_truth": "SPAM",
+      "evidence_count": 12,
+      "agents": {
+        "ml": {
+          "verdict": "LEGITIMATE",
+          "confidence": 0.286
+        },
+        "gemini": {
+          "verdict": "ABSTAIN",
+          "confidence": 0.0
+        },
+        "laya": {
+          "verdict": "SUSPICIOUS",
+          "confidence": 0.7
+        }
+      },
+      "consensus": {
+        "verdict": "NEEDS_REVIEW",
+        "confidence": 0.5,
+        "rule": "RULE-09"
+      },
+      "elapsed_sec": 0.18
+    },
+    {
+      "filename": "0082.705cdc08c2ee77821391a847d9c1a4e3",
+      "ground_truth": "SPAM",
+      "evidence_count": 5,
+      "agents": {
+        "ml": {
+          "verdict": "SPAM",
+          "confidence": 0.358
+        },
+        "gemini": {
+          "verdict": "ABSTAIN",
+          "confidence": 0.0
+        },
+        "laya": {
+          "verdict": "SUSPICIOUS",
+          "confidence": 0.7
+        }
+      },
+      "consensus": {
+        "verdict": "NEEDS_REVIEW",
+        "confidence": 0.5,
+        "rule": "RULE-09"
+      },
+      "elapsed_sec": 0.28
+    },
+    {
+      "filename": "0083.a042c7512d5db5f9fc1857fdc6bbdcc3",
+      "ground_truth": "SPAM",
+      "evidence_count": 5,
+      "agents": {
+        "ml": {
+          "verdict": "SPAM",
+          "confidence": 0.358
+        },
+        "gemini": {
+          "verdict": "ABSTAIN",
+          "confidence": 0.0
+        },
+        "laya": {
+          "verdict": "SUSPICIOUS",
+          "confidence": 0.7
+        }
+      },
+      "consensus": {
+        "verdict": "NEEDS_REVIEW",
+        "confidence": 0.5,
+        "rule": "RULE-09"
+      },
+      "elapsed_sec": 0.3
+    },
+    {
+      "filename": "0084.df5ac85de3405b6d07c9fa7ba3eecf6a",
+      "ground_truth": "SPAM",
+      "evidence_count": 6,
+      "agents": {
+        "ml": {
+          "verdict": "PHISHING",
+          "confidence": 0.333
+        },
+        "gemini": {
+          "verdict": "ABSTAIN",
+          "confidence": 0.0
+        },
+        "laya": {
+          "verdict": "SUSPICIOUS",
+          "confidence": 0.7
+        }
+      },
+      "consensus": {
+        "verdict": "NEEDS_REVIEW",
+        "confidence": 0.5,
+        "rule": "RULE-09"
+      },
+      "elapsed_sec": 0.87
+    },
+    {
+      "filename": "0085.6e7b1a983ab05445a7eaffcbb6811d3f",
+      "ground_truth": "SPAM",
+      "evidence_count": 7,
+      "agents": {
+        "ml": {
+          "verdict": "LEGITIMATE",
+          "confidence": 0.286
+        },
+        "gemini": {
+          "verdict": "ABSTAIN",
+          "confidence": 0.0
+        },
+        "laya": {
+          "verdict": "SUSPICIOUS",
+          "confidence": 0.7
+        }
+      },
+      "consensus": {
+        "verdict": "NEEDS_REVIEW",
+        "confidence": 0.5,
+        "rule": "RULE-09"
+      },
+      "elapsed_sec": 0.18
+    },
+    {
+      "filename": "0086.4b3a02be9a2561ada188d95b4601c01e",
+      "ground_truth": "SPAM",
+      "evidence_count": 4,
+      "agents": {
+        "ml": {
+          "verdict": "SPAM",
+          "confidence": 0.358
+        },
+        "gemini": {
+          "verdict": "ABSTAIN",
+          "confidence": 0.0
+        },
+        "laya": {
+          "verdict": "SUSPICIOUS",
+          "confidence": 0.7
+        }
+      },
+      "consensus": {
+        "verdict": "NEEDS_REVIEW",
+        "confidence": 0.5,
+        "rule": "RULE-09"
+      },
+      "elapsed_sec": 0.31
+    },
+    {
+      "filename": "0087.1cbd88a0c1564cb5d6c9b12c8c4175d8",
+      "ground_truth": "SPAM",
+      "evidence_count": 18,
+      "agents": {
+        "ml": {
+          "verdict": "PHISHING",
+          "confidence": 0.332
+        },
+        "gemini": {
+          "verdict": "ABSTAIN",
+          "confidence": 0.0
+        },
+        "laya": {
+          "verdict": "SUSPICIOUS",
+          "confidence": 0.7
+        }
+      },
+      "consensus": {
+        "verdict": "PHISHING",
+        "confidence": 0.95,
+        "rule": "RULE-01"
+      },
+      "elapsed_sec": 0.59
+    },
+    {
+      "filename": "0088.f421d8c380fb0c48483f026d243df9d9",
+      "ground_truth": "SPAM",
+      "evidence_count": 9,
+      "agents": {
+        "ml": {
+          "verdict": "PHISHING",
+          "confidence": 0.36
+        },
+        "gemini": {
+          "verdict": "ABSTAIN",
+          "confidence": 0.0
+        },
+        "laya": {
+          "verdict": "SUSPICIOUS",
+          "confidence": 0.7
+        }
+      },
+      "consensus": {
+        "verdict": "PHISHING",
+        "confidence": 0.95,
+        "rule": "RULE-01"
+      },
+      "elapsed_sec": 0.46
+    },
+    {
+      "filename": "0089.51c746428bb5e2793a1c04ce1e0c72c1",
+      "ground_truth": "SPAM",
+      "evidence_count": 5,
+      "agents": {
+        "ml": {
+          "verdict": "LEGITIMATE",
+          "confidence": 0.345
+        },
+        "gemini": {
+          "verdict": "ABSTAIN",
+          "confidence": 0.0
+        },
+        "laya": {
+          "verdict": "SUSPICIOUS",
+          "confidence": 0.7
+        }
+      },
+      "consensus": {
+        "verdict": "NEEDS_REVIEW",
+        "confidence": 0.5,
+        "rule": "RULE-09"
+      },
+      "elapsed_sec": 0.52
+    },
+    {
+      "filename": "0090.9a7e76d58065e29e709161dbe569fe54",
+      "ground_truth": "SPAM",
+      "evidence_count": 5,
+      "agents": {
+        "ml": {
+          "verdict": "LEGITIMATE",
+          "confidence": 0.286
+        },
+        "gemini": {
+          "verdict": "ABSTAIN",
+          "confidence": 0.0
+        },
+        "laya": {
+          "verdict": "SUSPICIOUS",
+          "confidence": 0.7
+        }
+      },
+      "consensus": {
+        "verdict": "NEEDS_REVIEW",
+        "confidence": 0.5,
+        "rule": "RULE-09"
+      },
+      "elapsed_sec": 0.18
+    },
+    {
+      "filename": "0091.113ec7122d4046a2754bcf70b9fb5299",
+      "ground_truth": "SPAM",
+      "evidence_count": 4,
+      "agents": {
+        "ml": {
+          "verdict": "LEGITIMATE",
+          "confidence": 0.277
+        },
+        "gemini": {
+          "verdict": "ABSTAIN",
+          "confidence": 0.0
+        },
+        "laya": {
+          "verdict": "SUSPICIOUS",
+          "confidence": 0.7
+        }
+      },
+      "consensus": {
+        "verdict": "NEEDS_REVIEW",
+        "confidence": 0.5,
+        "rule": "RULE-09"
+      },
+      "elapsed_sec": 4.2
+    },
+    {
+      "filename": "0092.bf7453c6b7917ca30074a3030d84e36d",
+      "ground_truth": "SPAM",
+      "evidence_count": 5,
+      "agents": {
+        "ml": {
+          "verdict": "SPAM",
+          "confidence": 0.315
+        },
+        "gemini": {
+          "verdict": "ABSTAIN",
+          "confidence": 0.0
+        },
+        "laya": {
+          "verdict": "SUSPICIOUS",
+          "confidence": 0.7
+        }
+      },
+      "consensus": {
+        "verdict": "NEEDS_REVIEW",
+        "confidence": 0.5,
+        "rule": "RULE-09"
+      },
+      "elapsed_sec": 8.53
+    },
+    {
+      "filename": "0093.2bb8a2a7e4d2841a14f27f32076dd77e",
+      "ground_truth": "SPAM",
+      "evidence_count": 4,
+      "agents": {
+        "ml": {
+          "verdict": "LEGITIMATE",
+          "confidence": 0.286
+        },
+        "gemini": {
+          "verdict": "ABSTAIN",
+          "confidence": 0.0
+        },
+        "laya": {
+          "verdict": "SUSPICIOUS",
+          "confidence": 0.7
+        }
+      },
+      "consensus": {
+        "verdict": "NEEDS_REVIEW",
+        "confidence": 0.5,
+        "rule": "RULE-09"
+      },
+      "elapsed_sec": 0.22
+    },
+    {
+      "filename": "0094.3ba780eac7dce1c2b063cd1fc12738be",
+      "ground_truth": "SPAM",
+      "evidence_count": 8,
+      "agents": {
+        "ml": {
+          "verdict": "SPAM",
+          "confidence": 0.364
+        },
+        "gemini": {
+          "verdict": "ABSTAIN",
+          "confidence": 0.0
+        },
+        "laya": {
+          "verdict": "SUSPICIOUS",
+          "confidence": 0.7
+        }
+      },
+      "consensus": {
+        "verdict": "NEEDS_REVIEW",
+        "confidence": 0.5,
+        "rule": "RULE-09"
+      },
+      "elapsed_sec": 0.44
+    },
+    {
+      "filename": "0095.e1db2d3556c2863ef7355faf49160219",
+      "ground_truth": "SPAM",
+      "evidence_count": 13,
+      "agents": {
+        "ml": {
+          "verdict": "LEGITIMATE",
+          "confidence": 0.286
+        },
+        "gemini": {
+          "verdict": "ABSTAIN",
+          "confidence": 0.0
+        },
+        "laya": {
+          "verdict": "SUSPICIOUS",
+          "confidence": 0.7
+        }
+      },
+      "consensus": {
+        "verdict": "NEEDS_REVIEW",
+        "confidence": 0.5,
+        "rule": "RULE-09"
+      },
+      "elapsed_sec": 0.18
+    },
+    {
+      "filename": "0096.b2cb600e893f7a663ea5f9bff3a6276e",
+      "ground_truth": "SPAM",
+      "evidence_count": 4,
+      "agents": {
+        "ml": {
+          "verdict": "SUSPICIOUS",
+          "confidence": 0.7
+        },
+        "gemini": {
+          "verdict": "ABSTAIN",
+          "confidence": 0.0
+        },
+        "laya": {
+          "verdict": "SUSPICIOUS",
+          "confidence": 0.7
+        }
+      },
+      "consensus": {
+        "verdict": "PHISHING",
+        "confidence": 0.95,
+        "rule": "RULE-01"
+      },
+      "elapsed_sec": 0.28
+    },
+    {
+      "filename": "0097.dce08392ba6bc552d13394fa73974b62",
+      "ground_truth": "SPAM",
+      "evidence_count": 13,
+      "agents": {
+        "ml": {
+          "verdict": "SPAM",
+          "confidence": 0.338
+        },
+        "gemini": {
+          "verdict": "ABSTAIN",
+          "confidence": 0.0
+        },
+        "laya": {
+          "verdict": "SUSPICIOUS",
+          "confidence": 0.7
+        }
+      },
+      "consensus": {
+        "verdict": "PHISHING",
+        "confidence": 0.95,
+        "rule": "RULE-01"
+      },
+      "elapsed_sec": 0.46
+    },
+    {
+      "filename": "0098.01d2958ccb7c2e4c02d0920593962436",
+      "ground_truth": "SPAM",
+      "evidence_count": 7,
+      "agents": {
+        "ml": {
+          "verdict": "SPAM",
+          "confidence": 0.345
+        },
+        "gemini": {
+          "verdict": "ABSTAIN",
+          "confidence": 0.0
+        },
+        "laya": {
+          "verdict": "SUSPICIOUS",
+          "confidence": 0.7
+        }
+      },
+      "consensus": {
+        "verdict": "PHISHING",
+        "confidence": 0.95,
+        "rule": "RULE-01"
+      },
+      "elapsed_sec": 0.18
+    },
+    {
+      "filename": "0099.c4ff6dba0a5177d3c7d8ef54c8920496",
+      "ground_truth": "SPAM",
+      "evidence_count": 11,
+      "agents": {
+        "ml": {
+          "verdict": "LEGITIMATE",
+          "confidence": 0.286
+        },
+        "gemini": {
+          "verdict": "ABSTAIN",
+          "confidence": 0.0
+        },
+        "laya": {
+          "verdict": "SUSPICIOUS",
+          "confidence": 0.7
+        }
+      },
+      "consensus": {
+        "verdict": "NEEDS_REVIEW",
+        "confidence": 0.5,
+        "rule": "RULE-09"
+      },
+      "elapsed_sec": 0.16
+    },
+    {
+      "filename": "0100.c60d1c697136b07c947fa180ba3e0441",
+      "ground_truth": "SPAM",
+      "evidence_count": 8,
+      "agents": {
+        "ml": {
+          "verdict": "PHISHING",
+          "confidence": 0.357
+        },
+        "gemini": {
+          "verdict": "ABSTAIN",
+          "confidence": 0.0
+        },
+        "laya": {
+          "verdict": "SUSPICIOUS",
+          "confidence": 0.7
+        }
+      },
+      "consensus": {
+        "verdict": "NEEDS_REVIEW",
+        "confidence": 0.5,
+        "rule": "RULE-09"
+      },
+      "elapsed_sec": 0.43
+    }
+  ]
+}

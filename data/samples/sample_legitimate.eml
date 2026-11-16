@@ -1,0 +1,24 @@
+From: "Engineering Operations" <dev-ops@corp.internal>
+Reply-To: dev-ops@corp.internal
+Return-Path: <dev-ops@corp.internal>
+To: engineers@corp.internal
+Subject: Scheduled Maintenance Window: Internal CI/CD Cluster
+Date: Mon, 16 Nov 2026 01:30:00 +0000
+Message-ID: <maint-2026-11-16@corp.internal>
+Authentication-Results: mx.corp.internal; spf=pass; dkim=pass; dmarc=pass
+Content-Type: text/plain; charset="utf-8"
+
+Hi Everyone,
+
+This is an automated notification that the internal GitLab CI/CD runner cluster will undergo scheduled maintenance tonight between 02:00 UTC and 03:00 UTC.
+
+During this window:
+- Active pipeline jobs will be paused.
+- No merges to the main branch should be executed.
+- Normal operations will resume automatically at 03:05 UTC.
+
+Please reach out in the #devops Slack channel if you anticipate any blocking conflicts.
+
+Best regards,
+Engineering Infrastructure Team
+Corporate Systems Operations

@@ -1,0 +1,21 @@
+From: "Accounting External" <billing@partner-invoicing-portal.com>
+Reply-To: billing@partner-invoicing-portal.com
+To: finance@company.com
+Subject: Notice: Updated Wire Instructions for Project Deliverables
+Date: Mon, 16 Nov 2026 01:20:00 +0000
+Message-ID: <inv-90214@partner-invoicing-portal.com>
+Authentication-Results: mx.company.com; spf=pass; dkim=none; dmarc=none
+Received: from relay.partner-invoicing-portal.com (203.0.113.190) by mx.company.com; Mon, 16 Nov 2026 01:20:00 +0000
+Content-Type: text/plain; charset="utf-8"
+
+Hi Finance Team,
+
+Please take note that our standard banking routing instructions have changed for the remainder of Q4.
+Kindly process the outstanding balance of $14,200 to our new intermediary beneficiary bank account.
+
+Please confirm receipt and acknowledge when the transfer is initiated.
+
+Best regards,
+David Ross
+Senior Billing Specialist
+Partner Invoicing Services

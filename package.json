@@ -1,0 +1,14 @@
+{
+  "name": "email-threat-detection-platform",
+  "version": "1.0.0",
+  "description": "Multi-agent Email Threat Detection Platform with System 1 Typed Decisions",
+  "scripts": {
+    "setup": "python scripts/manage.py setup",
+    "prepare-models": "python scripts/manage.py prepare-models",
+    "laya-check": "python scripts/manage.py laya-check",
+    "dev": "python scripts/manage.py dev",
+    "test": "python scripts/manage.py test",
+    "eval": "python scripts/manage.py eval",
+    "build:frontend": "cd frontend && npm run build"
+  }
+}

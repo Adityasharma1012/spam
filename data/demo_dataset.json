@@ -1,0 +1,58 @@
+[
+  {
+    "text": "URGENT NOTICE: Your corporate account access will be terminated within 2 hours. Click here to verify credentials http://198.51.100.4/login and update your corporate password immediately. IT Helpdesk.",
+    "label": "PHISHING"
+  },
+  {
+    "text": "Your package delivery failed due to unpaid customs fee of $2.50. Please update your credit card details immediately at http://tracking-post-verify.example.org/pay to prevent parcel return.",
+    "label": "PHISHING"
+  },
+  {
+    "text": "Security Alert: Unusual sign-in activity detected on your bank account from IP 192.0.2.1. Confirm your identity now at http://fake-bank-auth.net/secure or your account will be frozen.",
+    "label": "PHISHING"
+  },
+  {
+    "text": "Dear employee, view attached payroll bonus spreadsheet for Q4. Open bonus_doc.exe to calculate your dividend distribution.",
+    "label": "PHISHING"
+  },
+  {
+    "text": "Exclusive offer! Save 70% on luxury designer watches today only! Unsubscribe by clicking our bulk marketing partner link. Best prices on electronics and watches.",
+    "label": "SPAM"
+  },
+  {
+    "text": "Boost your website traffic by 500% with our automated SEO suite! Contact sales@market-boost-promo.example.com for a free consultation. Limited time marketing blast.",
+    "label": "SPAM"
+  },
+  {
+    "text": "Weekly promotional circular: Discounts on printer paper, office chairs, and coffee supplies for your workplace. Order online today.",
+    "label": "SPAM"
+  },
+  {
+    "text": "We noticed your domain registration is expiring soon. Renew with our third-party directory listing service today to protect your brand prominence.",
+    "label": "SPAM"
+  },
+  {
+    "text": "Hello, please review the revised contract proposal from our external partner. Sender domain registered 2 days ago. Reply with approval.",
+    "label": "SUSPICIOUS"
+  },
+  {
+    "text": "Wire transfer inquiry: can you send over the updated wire routing number for invoice 4921? Writing from mobile device while traveling.",
+    "label": "SUSPICIOUS"
+  },
+  {
+    "text": "Hi team, please find attached the meeting minutes from yesterday's product sync. Let me know if you have any questions before Friday's sprint review.",
+    "label": "LEGITIMATE"
+  },
+  {
+    "text": "Quarterly financial report is now available on the internal company intranet. Please log in using your standard single sign-on portal.",
+    "label": "LEGITIMATE"
+  },
+  {
+    "text": "Reminder: Annual benefits enrollment closes next Wednesday. Reach out to human resources at hr@corp.internal if you need assistance.",
+    "label": "LEGITIMATE"
+  },
+  {
+    "text": "Your calendar invitation: Architecture Design Review on Thursday at 2:00 PM EST in Conference Room B.",
+    "label": "LEGITIMATE"
+  }
+]

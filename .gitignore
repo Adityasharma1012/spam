@@ -1,0 +1,69 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+.venv/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Node / Frontend
+node_modules/
+frontend/node_modules/
+frontend/dist/
+.npm
+
+# Secrets and Local Environment
+.env
+*.local
+*.key
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS & Executables
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+.DS_Store
+*.exe
+
+# Unrelated local projects and archives
+*.zip
+*.docx
+check*.py
+main.cpp
+game.cpp
+cutie_pie_birthday*/
+Cutie_Pie_Birthday*/
+GIFT/
+Melodify/
+PrismMusic/
+report_build/
+rupeash/
+scholarai/
+shelter-allocation/
+wasteless-ai/
+
